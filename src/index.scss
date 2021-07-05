@@ -1,0 +1,98 @@
+$width-sm: 576px;
+$width-md: 768px;
+$width-lg: 992px;
+$width-xl: 1200px;
+
+$marginSize: 8px;
+
+$fontFace: 'Typefesse_Claire-Obscure';
+
+@font-face {
+  font-family: "typefesse";
+  src: url("/fonts/typefesse/#{$fontFace}.woff2") format("woff2"),
+    url("/fonts/typefesse/#{$fontFace}.woff") format("woff"),
+    url("/fonts/typefesse/#{$fontFace}.eot") format("eot");
+}
+
+html,
+body {
+  font-family: "typefesse";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #eeeeee;
+  color: #2e3131;
+}
+
+.bonjour-peuple {
+  text-align: center;
+  font-size: 4em;
+}
+
+.content {
+  margin: auto;
+  width: 100%;
+
+  @media (min-width: $width-sm) {
+    width: 540px;
+  }
+
+  @media (min-width: $width-md) {
+    width: 720px;
+  }
+
+  @media (min-width: $width-lg) {
+    width: 960px;
+  }
+
+  @media (min-width: $width-xl) {
+    width: 1140px;
+  }
+}
+
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .project-item {
+    min-height: 0;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    width: 100%;
+    margin-bottom: $marginSize * 2;
+
+    @media (min-width: $width-md) and (max-width: $width-lg) {
+      width: calc(50% - #{$marginSize});
+
+      &:nth-child(even) {
+        margin-left: $marginSize;
+      }
+
+      &:nth-child(odd) {
+        margin-right: $marginSize;
+      }
+    }
+
+    // Large devices (desktops, 992px and up)
+    @media (min-width: $width-lg) {
+      width: calc((100% - #{$marginSize * 4}) / 3);
+
+      &:nth-child(3n + 1) {
+        margin-right: $marginSize;
+      }
+
+      &:nth-child(3n + 2) {
+        margin-left: $marginSize;
+        margin-right: $marginSize;
+      }
+
+      &:nth-child(3n + 3) {
+        margin-left: $marginSize;
+      }
+    }
+  }
+}
