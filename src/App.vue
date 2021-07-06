@@ -1,18 +1,23 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
-  <h1 class="bonjour-peuple">Projets et vanité</h1>
-  <div class="content">
+  <header>
+    <h1 class="bonjour-peuple"> Projets et vanité </h1>
+  </header>
+  <section class="content">
     <projects-list />
-  </div>
+  </section>
+  <footer>
+    christophe point sauder arobase gmail point com
+  </footer>
 </template>
 
 <script>
-import ProjectsList from './components/ProjectsList.vue'
+  import ProjectsList from './components/ProjectsList.vue'
 
-export default {
-  name: 'App',
-  components: {
-    ProjectsList
+  export default {
+    name: 'App',
+    components: {
+      ProjectsList
+    }
   }
-}
 </script>

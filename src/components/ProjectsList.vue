@@ -4,16 +4,19 @@
       :key="index"
       :project="project" />
   </div>
+  <ProjectDetails :project="projects[0]" />
 </template>
 
 <script>
 import ProjectItem from './ProjectItem.vue'
+import ProjectDetails from './ProjectDetails.vue'
 import projects from '../assets/projects.json'
 
 export default {
   name: 'ProjectsList',
   components: {
-    ProjectItem
+    ProjectItem,
+    ProjectDetails
   },
   data() {
     return {
