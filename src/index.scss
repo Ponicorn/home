@@ -9,7 +9,9 @@ $black: #2e3131;
 $marginSize: 16px;
 $boxshadow: $marginSize * 0.5 ;
 $boxshadow-hover: $marginSize;
+$yellow: #fff59d;
 
+$cursor: url('/src/assets/pointer.png') 21 2, pointer;
 $fontFace: 'Typefesse_Claire-Obscure';
 
 @font-face {
@@ -30,8 +32,12 @@ body {
   padding: 0;
 }
 
+.pointer {
+  cursor: $cursor
+}
+
 header {
-  background-color: #fff59d;
+  background-color: $yellow;
   padding: $marginSize * 2;
   margin-bottom: $marginSize * 2;
   border-bottom: $marginSize * 0.5 solid $black;
@@ -85,7 +91,7 @@ header {
     width: 100%;
     margin-bottom: $marginSize * 2;
     box-shadow: $boxshadow $boxshadow 0 $black;
-    cursor: url('/src/assets/pointer.png'), pointer;
+    cursor: $cursor;
     transition: 100ms;
 
     &:hover {  
@@ -153,6 +159,67 @@ header {
   .project-details {
     background:$white;
     padding: $marginSize * 2;
+    
+    .head {
+      display: flex;
+      
+      h1 {
+        flex-grow: 1;
+        text-align: center;
+        margin: 0;
+        font-size: 2em;
+        margin-bottom: $marginSize;
+        margin-left: $marginSize * 2;
+        text-transform: capitalize;
+      }
+      .close {
+        width: $marginSize * 2;
+        height: $marginSize * 2;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center ;
+      }
+    }
+    
+    .description {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+
+      .image {
+        height: 200px;
+        border: $marginSize * 0.5 solid $black;
+        .image-wrap-correction {
+          height: 100%;
+          width: 100%;
+          img {
+            max-width: 100%;
+            max-height: 100%;
+          }
+        }
+      }
+      .text {
+        padding: $marginSize * 2;
+        max-width: 360px; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .lien{
+          margin-top: $marginSize * 2;
+          justify-self: flex-end;
+          a {
+            background: $yellow;
+            text-decoration: none;
+            padding: $marginSize * 0.5 $marginSize;
+            color: $black;
+            cursor: inherit;
+          }
+        } 
+      }
+    }
   }
 }
 
