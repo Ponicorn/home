@@ -5,12 +5,13 @@
     "dev": "vite",
     "build": "vite build"
   },
-  "dependencies": {
-    "vue": "^3.0.4"
-  },
   "devDependencies": {
-    "@vue/compiler-sfc": "^3.0.4",
-    "sass": "^1.35.1",
-    "vite": "^1.0.0-rc.13"
+    "@vitejs/plugin-vue": "^1.9.3",
+    "sass": "^1.42.1",
+    "vite": "^2.6.7",
+    "vue": "^3.2.20"
+  },
+  "dependencies": {
+    "npm": "^8.0.0"
   }
 }

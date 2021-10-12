@@ -1,5 +1,5 @@
 <template>
-    <section class="projet-details-wrap" @click="triggerCloseBackground"> 
+    <section class="projet-details-wrap" @click="triggerCloseBackground">
         <article class="project-details">
             <div class="head">
                 <h1>{{ project.name }}</h1>
@@ -8,19 +8,19 @@
             <div class="description">
                 <div class="image">
                     <div class="image-wrap-correction">
-                        <img :src="projectImage" :srcset="projectImageHd">
+                        <img loading="lazy" :src="projectImage" :srcset="projectImageHd" alt="project.name">
                     </div>
                 </div>
                 <div class="text">
                     <div>
                         {{ project.desc }}
-                    </div>    
+                    </div>
                     <div class="lien pointer">
                         <a class="button" target="_blank" :href="project.url">Liens du projet</a>
                     </div>
                 </div>
             </div>
-        </article> 
+        </article>
     </section>
 </template>
 
@@ -29,17 +29,19 @@ export default {
     name: 'ProjectDetails',
     props: ['project', 'close'],
     computed: {
-        projectImage () {
+        projectImage() {
             const lowerCaseName = this.project?.name.toLowerCase()
-            return `/src/assets/images/${lowerCaseName}.med.png`
+            return `/images/${lowerCaseName}.med.webp`
         },
-        projectImageHd () {
+        projectImageHd() {
             const lowerCaseName = this.project?.name.toLowerCase()
-            return `/src/assets/images/${lowerCaseName}.high.png 2x`
+            return `
+              /images/${lowerCaseName}.med.webp,
+              /images/${lowerCaseName}.high.webp 2x`
         }
     },
     methods: {
-        triggerCloseBackground (event) {
+        triggerCloseBackground(event) {
             if (event.target.classList.contains('projet-details-wrap')) {
                 this.close()
             }

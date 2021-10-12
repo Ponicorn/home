@@ -1,6 +1,6 @@
 <template>
     <article class="project-item">
-        <img :src="projectImage" :srcset="projectImageHd">
+        <img loading="lazy" :src="projectImage" :srcset="projectImageHd" :alt="project.name">
     </article>
 </template>
 
@@ -9,13 +9,15 @@ export default {
     name: 'ProjectItem',
     props: ['project'],
     computed: {
-        projectImage () {
+        projectImage() {
             const lowerCaseName = this.project?.name.toLowerCase()
-            return `/src/assets/images/${lowerCaseName}.med.png`
+            return `/images/${lowerCaseName}.med.webp`
         },
-        projectImageHd () {
+        projectImageHd() {
             const lowerCaseName = this.project?.name.toLowerCase()
-            return `/src/assets/images/${lowerCaseName}.high.png 2x`
+            return `
+            /images/${lowerCaseName}.med.webp,
+            /images/${lowerCaseName}.high.webp 2x`
         }
     }
 }
